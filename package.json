@@ -3,9 +3,18 @@
   "version": "1.0.0",
   "description": "test",
   "main": "index.js",
+  "sideEffects": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "test"
+    "style": "eslint *.js .internal/**/*.js",
+    "test": "mocha -r esm test/*.test.js",
+    "validate": "npm run style && npm run test"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "eslint": "^7.16.0",
+    "eslint-plugin-import": "^2.22.1",
+    "lodash": "4.17.20",
+    "esm": "^3.2.25"
   },
   "repository": {
     "type": "git",
